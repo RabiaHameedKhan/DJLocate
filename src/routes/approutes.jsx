@@ -1,4 +1,6 @@
 import { Routes, Route } from "react-router-dom";
+import PublicLayout from "../layouts/PublicLayout";
+
 
 // Public Pages
 import Home from "../pages/public/Home";
@@ -20,9 +22,16 @@ const approutes = () => {
   return (
     <Routes>
       {/* Public Routes */}
-      <Route path="/" element={<Home />} />
-      <Route path="/browse" element={<Browse />} />
-      <Route path="/dj/:id" element={<DJProfile />} />
+     <Route
+  path="/"
+  element={
+    <PublicLayout>
+      <Home />
+    </PublicLayout>
+  }
+/>
+
+
 
       {/* Auth */}
       <Route path="/login" element={<Login />} />
